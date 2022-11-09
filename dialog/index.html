@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Diálogo</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'><link rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+        function selecOp()
+        {
+        var op=document.getElementById("mounth");
+        var tt=document.getElementById("text");
+        if (op.selectedIndex==0)tt.value="";
+        if (op.selectedIndex==1)tt.value="1 Mes";
+        if (op.selectedIndex==2)tt.value="2 Meses";
+        if (op.selectedIndex==3)tt.value="3 Meses";
+        if (op.selectedIndex==4)tt.value="4 Meses";
+        if (op.selectedIndex==5)tt.value="5 Meses";
+        if (op.selectedIndex==6)tt.value="6 Meses";
+        if (op.selectedIndex==6)tt.value="7 Meses";
+        if (op.selectedIndex==6)tt.value="8 Meses";
+        if (op.selectedIndex==6)tt.value="9 Meses";
+        }
+          var mesa=document.getElementById("text");
+        </script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class='modal'>
+  <div class='header'>
+    ¿En qué mes te encuentras?
+  </div>
+  <div class='content' style="font-size:15px;">
+    Esta información se usará como base para darte un proceso más especializado y atento.
+  </div>
+  <form name="form2">
+  <div class='actions'>
+    <select id="mounth" name="mes" onchange="selectOp()">
+    <option value="hide">Mes</option>
+    <option value="january" rel="icon-temperature">1</option>
+    <option value="february">2</option>
+    <option value="march">3</option>
+    <option value="april">4</option>
+    <option value="may">5</option>
+    <option value="june">6</option>
+    <option value="july">7</option>
+    <option value="august">8</option>
+    <option value="september">9</option>
+</select>
+    <br><input type="text" name="text" id="text" style="visibility:hidden;">
+<br><br><br>
+    <input name="submit" type="submit" id="submit" class='success' href='../index/index.html' value="Enviar"/>
+    <br><br>
+    <a type="button" class="success" name="button" href='../index/index.html'>Continuar</a>
+  </div>
+  <form/>
+  <div class='loader-bar'>
+    <div class='bar'></div>
+  </div>
+</div>
+<!-- partial -->
+<script type="text/javascript">
+$('select').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+    $this.addClass('select-hidden');
+    $this.wrap('<div class="select"></div>');
+    $this.after('<div class="select-styled"></div>');
+
+    var $styledSelect = $this.next('div.select-styled');
+    $styledSelect.text($this.children('option').eq(0).text());
+
+    var $list = $('<ul />', {
+        'class': 'select-options'
+    }).insertAfter($styledSelect);
+
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+
+    var $listItems = $list.children('li');
+
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active').not(this).each(function(){
+            $(this).removeClass('active').next('ul.select-options').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options').toggle();
+    });
+
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        //console.log($this.val());
+    });
+
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
+});
+
+</script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script type="text/javascript">
+
+$(function(){
+
+  mes = document.getElementById("mounth").value;
+        $( "#submit" ).click(function(event){
+            $.ajax(
+                {
+                    type:"post",
+                    url: "https://tummylog.000webhostapp.com",
+                    data:{ mes:mes },
+                    success:function(result)
+                    {
+                        alert("¡Gracias!");
+                    }
+                });
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenida</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <style media="screen">
+    h1{
+      font-family: Montserrat;
+      text-align: center;
+      color: #fff;
+      font-size: 25px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    button{
+      color: #f8f9fa;
+      border-color: #f8f9fa;
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      user-select: none;
+      background-color: transparent;
+      border: .125rem solid transparent;
+      line-height: 1.5;
+      border-radius: .5rem;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+      font-family: Montserrat;
+    }
+  </style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <h1 style="font-size:20px;">¡Bienvenida a Tummy!</h1>
+        </div>
+        <div id="target" class="carousel-item">
+          <h1 style="font-size:20px;">Lleva el control de tu bebé.</h1>
+        </div>
+        <div class="carousel-item">
+          <h1 style="position: absolute; font-size: 20px; margin-left: 10px; margin-top: 360px; margin-right:15px;">Un espacio sólo para ti, para darlo todo. </h1>
+          <br>
+          <br>
+            <button type="button" onclick="window.location.href='../dialog/index.html';" name="button" style="margin-left: 150px; margin-top:20px;">Continuar</button>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

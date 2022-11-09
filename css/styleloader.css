@@ -1,0 +1,68 @@
+body {background-color: #f0788b;color:#4ecce0;}
+h1 {display:inline; font-size:90px;}
+.container {margin-left:-75%;margin-top:90%;width: 600px; height: 5px;}
+.two
+{
+    position:absolute;
+    margin-left: 96px;
+    margin-top:0px;
+  padding:5px;
+    -webkit-animation: go 3s infinite;
+}
+.one
+{
+  position:absolute;
+  padding:4px;
+  margin-top:-5px;
+  margin-left:96px;
+  -webkit-animation: follow 2.5s infinite;
+}
+.three
+{
+  position:absolute;
+    margin-left: 90px;
+  font-size:30px;
+    margin-top:0px;
+  padding:5px;
+    -webkit-animation: Orbit 1.5s infinite;
+}
+.four
+{
+  position:absolute;
+    margin-left: 46px;
+  font-size:30px;
+    margin-top:0px;
+  padding:5px;
+    -webkit-animation: followto 4s infinite;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes go
+{
+  from{}
+  50% {-webkit-transform: rotate(360deg) translateX(-16px) translateY(-5px)}
+  100% {}
+}
+
+@-webkit-keyframes Orbit {
+    from { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@-webkit-keyframes follow
+{
+  from {}
+  50% {-webkit-transform: rotate(-360deg) translateX(5px) translateY(15px)}
+  100% {}
+}
+
+@-webkit-keyframes followto
+{
+  from {}
+  50% {-webkit-transform: rotate(-360deg) translateX(5px) translateY(15px)}
+  100% {}
+}
+
+.container{
+  -webkit-filter: url("#goo");
+}

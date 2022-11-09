@@ -1,0 +1,111 @@
+body {
+  margin: 20px 10px;
+  background: #4ecce0;
+  text-align: left;
+  font-family: Montserrat, Helvetica Neueu, Helvetica, Arial, sans-serif;
+}
+
+.progress {
+  --progress-value: .3243;
+  --color: #4ecce0;
+  height: 400px;
+  background: #4ecce0;
+}
+
+.circle-progress {
+  width: 250px;
+  height: 250px;
+  margin-left: 50px;
+  margin-top: 100px;
+}
+
+.circle-progress-value {
+  stroke-width: 4px;
+  stroke: #f0788b;
+  transition: stroke .4s;
+}
+
+.circle-progress-circle {
+  stroke-width: 2px;
+  stroke: #fff;
+}
+
+.circle-progress-text {
+  font-weight: bold;
+  fill: #FFF;
+  transform: translateX(0.2em);
+  transition: fill .4s;
+}
+
+input[type=range] {
+  width: 210px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  -webkit-appearance: none;
+  display: inline-block;
+  background: none;
+  cursor: pointer;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background: #fff;
+  outline: none;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  background: #fff;
+  outline: none;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 6px;
+  background: #fff;
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -5px;
+  background: #fff;
+  transition: .15s;
+  border: none;
+  border-radius: 5;
+}
+input[type=range]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  margin-top: -5px;
+  background: #fff;
+  transition: .15s;
+  border: none;
+  border-radius: 5;
+}
+input[type=range]::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  margin-top: -5px;
+  background: #fff;
+  transition: .15s;
+  border: none;
+  border-radius: 5;
+}
+input[type=range]:hover::-webkit-slider-thumb, input[type=range]:focus::-webkit-slider-thumb {
+  background: #fff;
+}
+input[type=range]:hover::-moz-range-thumb, input[type=range]:focus::-moz-range-thumb {
+  background: #fff;
+}
+input[type=range]:hover::-ms-thumb, input[type=range]:focus::-ms-thumb {
+  background: #fff;
+}
+
+a {
+  color: #75798a;
+  text-decoration-offset: 4px;
+}

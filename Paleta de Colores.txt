@@ -1,0 +1,5 @@
+#4ecce0   -------> Celeste
+#f0788b   -------> Rojo Pastel
+#f7a9a8   -------> Color Piel
+#d4b7ff   -------> Púrpura Pastel
+#abead4   -------> Verde Azulado o Verde Agua

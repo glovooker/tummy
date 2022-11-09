@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tu Calendario</title>
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+  <link href="all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="freelancer.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a style="color:white; font-size:25px;" href="../index/index.html">Tummy</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="calendar.html">Tu Calendario</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index/index.html">Tu Progreso</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index/index.html">Sobre Nosotros</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- partial:index.partial.html -->
+<head>
+  <link rel="stylesheet" href="css/calendar.css">
+</head>
+<body>
+  <div class="calendar">
+  <div class="day"></div>
+  <div class="month">
+    <div class="month-name"></div>
+  </div>
+  <div class="number"></div>
+</div>
+<div class="contain">
+  <div class="caltwo">
+    <div class="daytwo"></div>
+    <div class="monthtwo"></div>
+    <div class="numtwo"></div>
+  </div>
+</div>
+  <br>
+  <br>
+  <br>
+  <div>
+  <form id="form1">
+    <div align="center" data-role="fieldcontain">
+        <input type="text" id="entry" name="entry" value="" placeholder="Me ocurrió esto hoy..." style="border: 0px;border-radius: 15px;text-align: center;height: 30px;">
+    </div>
+    <br>
+    <br>
+    <br>
+      <div class="text-center mt-4">
+        <input type="submit" id="submit" name="submit" value=" Enviar" class="btn btn-xl btn-outline-light">
+      </div>
+</form>
+  <br>
+  <br>
+  <br>
+
+</body>
+<!-- partial -->
+
+<footer class="footer text-center">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <h4 class="text-uppercase mb-4">Redes Sociales</h4>
+        <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/Tummy79619920">
+          <i class="fab fa-fw fa-twitter"></i>
+        </a>
+        <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/tummy_the_octopus/">
+          <i class="fab fa-fw fa-instagram"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Copyright Section -->
+<section class="copyright py-4 text-center text-white">
+  <div class="container">
+    <small>Copyright &copy; Tummy 2019</small>
+  </div>
+</section>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-to-top d-lg-none position-fixed ">
+  <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+</div>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="js/script.js"></script>
+<script src="jquery.easing.min.js"></script>
+<script src="jquery.min.js"></script>
+<script src="bootstrap.bundle.min.js"></script>
+<script src="freelancer.min.js"></script>
+<script>
+$(function(){
+        $( "#submit" ).click(function(event)
+        {
+            event.preventDefault();
+            var entry= $("#entry").val();
+            $.ajax(
+                {
+                    type:"post",
+                    url: "https://equipotummy.000webhostapp.com/registro.php",
+                    data:{ entry:entry },
+                    success:function(result)
+                    {
+                        alert("¡Entrada Guardada!");
+                    }
+                });
+        });
+    });
+</script>
+
+</body>
+</html>
